@@ -1,0 +1,19 @@
+<div class="container mt-4">
+    <h2>Editar Registro</h2>
+    
+    <form (ngSubmit)="updateItem()">
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" id="nombre" [(ngModel)]="item.nombre" name="nombre" class="form-control" required>
+      </div>
+  
+      <div class="mb-3">
+        <label for="descripcion" class="form-label">Descripción</label>
+        <textarea id="descripcion" [(ngModel)]="item.descripcion" name="descripcion" class="form-control" required></textarea>
+      </div>
+  
+      <button type="submit" class="btn btn-success">Guardar Cambios</button>
+      <a routerLink="/" class="btn btn-secondary">Cancelar</a>
+    </form>
+  </div>
+  

@@ -1,0 +1,27 @@
+<div class="container mt-4">
+    <h2>Lista de Registros</h2>
+    <a routerLink="/create" class="btn btn-primary mb-3">Agregar Nuevo</a>
+    
+    <table class="table table-striped">
+      <thead class="table-dark">
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Descripción</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of items">
+          <td>{{ item.id }}</td>
+          <td>{{ item.nombre }}</td>
+          <td>{{ item.descripcion }}</td>
+          <td>
+            <a [routerLink]="['/edit', item.id]" class="btn btn-warning btn-sm">Editar</a>
+            <button (click)="deleteItem(item.id)" class="btn btn-danger btn-sm">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
